@@ -11,8 +11,8 @@ use nostr::event::KindBase;
 const ALICE_SK: &str = "6b911fd37cdf5c81d4c0adb1ab7fa822ed253ab0ad9aa18d77257c88b29b718e";
 const BOB_SK: &str = "7b911fd37cdf5c81d4c0adb1ab7fa822ed253ab0ad9aa18d77257c88b29b718e";
 // const WS_ENDPOINT: &str = "wss://relayer.fiatjaf.com/";
-const WS_ENDPOINT: &str = "wss://nostr-relay.wlvs.space";
-// const WS_ENDPOINT: &str = "ws://localhost:3333/ws";
+// const WS_ENDPOINT: &str = "wss://nostr-relay.wlvs.space";
+ const WS_ENDPOINT: &str = "ws://localhost:7000";
 
 fn main() -> Result<(), Box<dyn Error>> {
     env_logger::init();

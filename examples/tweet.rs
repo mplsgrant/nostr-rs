@@ -10,7 +10,8 @@ use nostr::event::KindBase;
 const ALICE_SK: &str = "6b911fd37cdf5c81d4c0adb1ab7fa822ed253ab0ad9aa18d77257c88b29b718e";
 const BOB_SK: &str = "7b911fd37cdf5c81d4c0adb1ab7fa822ed253ab0ad9aa18d77257c88b29b718e";
 // const WS_ENDPOINT: &str = "wss://relayer.fiatjaf.com/";
-const WS_ENDPOINT: &str = "wss://nostr-relay-dev.wlvs.space";
+// const WS_ENDPOINT: &str = "wss://nostr-relay-dev.wlvs.space";
+const WS_ENDPOINT: &str = "ws://localhost:7000";
 
 
 fn main() -> Result<(), Box<dyn Error>> {
@@ -64,14 +65,11 @@ fn main() -> Result<(), Box<dyn Error>> {
                 RelayMessage::Notice { message } => {
                     println!("Got a notice: {}", message);
                 }
-                RelayMessage::Event {
-                    event: _,
-                    subscription_id: _,
-                } => {
-                    println!("Got an event!");
+                RelayMessage::Event { event, subscription_id } => {
+                    println!("Got an event on subscription {subscription_id} with content: {}", event.content);
                 }
-                RelayMessage::EndOfStoredEvents {subscription_id: _} => {
-                    println!("Relay signalled End of Stored Events");
+                RelayMessage::EndOfStoredEvents { subscription_id } => {
+                    println!("Relay signalled End of Stored Events, for subscription {subscription_id}");
                 }
             }
         }

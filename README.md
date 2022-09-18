@@ -7,4 +7,12 @@
 - [ ] subscribe to relays
 - [ ] put relays in pools
 
-try `cargo run --example demo` if you want to see what's up. You'll need a relay running at `ws://localhost:3333/ws`
+# Examples
+
+If you want to see what's up - try: 
+- `cargo run --example dm`
+- `cargo run --example tweet` if you want to see what's up.
+
+**NOTE**: Default behaviour is to run against local relay on port 7000 (see https://github.com/scsibug/nostr-rs-relay)
+
+If you want to try against public relays - change `WS_ENDPOINT` in corresponding examples file
