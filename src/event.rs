@@ -116,7 +116,7 @@ impl Event {
             &nip04::encrypt(&sender_keys.secret_key()?, &receiver_keys.public_key, content),
             sender_keys,
             &vec![Tag::new("p", &receiver_keys.public_key_as_str(), "")],
-            Kind::Base(KindBase::TextNote)
+            Kind::Base(KindBase::EncryptedDirectMessage)
         )
 
     }
