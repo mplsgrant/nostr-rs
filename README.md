@@ -9,10 +9,11 @@
 
 # Examples
 
-If you want to see what's up - try: 
+Examples can be run as follows:
+
 - `cargo run --example dm`
-- `cargo run --example tweet` if you want to see what's up.
+- `cargo run --example tweet`
 
 **NOTE**: Default behaviour is to run against local relay on port 7000 (see https://github.com/scsibug/nostr-rs-relay)
 
-If you want to try against public relays - change `WS_ENDPOINT` in corresponding examples file
+If you want to try against public relays, change `WS_ENDPOINT` in the corresponding examples files.
